@@ -1,6 +1,7 @@
 import React from 'react';
 import { Search } from 'lucide-react';
 import { ShoppingBag } from 'lucide-react';
+import Logo from "./Logo";
 
 
 const Navbar = () => {
@@ -28,29 +29,32 @@ const Navbar = () => {
 ];
   return (
     <>
-      <nav className='bg-slate-500'>
+      <nav className='bg-white w-full'>
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
             <div className='flex items-center justify-between h-16'>
                 <div className='flex items-center'> 
                     <div className='flex-shrink-0 '>
-                        <a href = "/" className="text-white hover:text-black hover:underline rounded-lg p-2">
+                        <a href = "/" className="font-sans text-gray-500 hover:text-black hover:underline rounded-lg p-2">
                             Home
                         </a>
-                        <a href = "/" className="text-white hover:text-black hover:underline rounded-lg p-2">
+                        <a href = "/" className="font-sans text-gray-500 hover:text-black hover:underline rounded-lg p-2">
                             Catalog
                         </a>
-                        <a href = "/" className="text-white hover:text-black hover:underline rounded-lg p-2">
+                        <a href = "/" className="font-sans text-gray-500 hover:text-black hover:underline rounded-lg p-2">
                             Contact
                         </a>
                     </div>
                 </div>
+                <div>
+                    <Logo/>
+                </div>
                 <div className='flex items-center space-x-4'>
                     <a href="/"
-                    className="hover:text-black rounded-lg p-2">
+                    className="hover:text-black hover:scale-110 rounded-lg p-2">
                         <Search/>
                     </a>
                     <a href="/"
-                    className="hover:text-black rounded-lg p-2">
+                    className="hover:text-black hover:scale-110 rounded-lg p-2">
                         <ShoppingBag/>
                     </a>
                 </div>
