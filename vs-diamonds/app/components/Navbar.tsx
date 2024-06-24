@@ -1,36 +1,41 @@
-import React from 'react';
+"use client"
+
+import {useState} from 'react';
 import { Search, ShoppingBag, Menu} from 'lucide-react';
 import Logo from "./Logo";
+import Sidebar from './Sidebar';
 
 
 const Navbar = () => {
 
-    // const [navbar, setNavbar] = useState(false);
+     const [navbar, setNavbar] = useState(false);
+
+
+     const toggleDropDown = () => {
+        setNavbar(!navbar);
+     };
 
     const MenuItems = [{
-        name: "test ",
-        link: "test-link",
-        icon: "put icon here",
+        name: "Home",
+        link: "/",
         className: "appropriate classname here",
     },
 
     {
-        name: "test 2 ",
-        link: "test-link",
-        icon: "put icon here",
+        name: "Catalog",
+        link: "/Catalog",
         className: "appropriate classname here",
     },
 
     {
-        name: "test 2 ",
-        link: "test-link",
-        icon: "put icon here",
+        name: "Contact",
+        link: "/Contact",
         className: "appropriate classname here",
     }
 ];
   return (
     <>
-      <nav className='bg-white w-full'>
+      <nav className='bg-white w-full z-50 relative h-16'>
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
             <div className='flex items-center justify-between h-16'>
                 <div className='flex items-center'> 
@@ -46,7 +51,7 @@ const Navbar = () => {
                         </a>
                     </div>
                     <div className='md:hidden'>
-                        <Menu/>
+                        <Menu onClick={toggleDropDown}/>
                     </div>
                 </div>
                 <div>
@@ -54,17 +59,20 @@ const Navbar = () => {
                 </div>
                 <div className='flex items-center space-x-4'>
                     <a href="/"
-                    className="hover:text-black hover:scale-110 rounded-lg p-2 hidden md:block">
+                    className="hover:text-black hover:scale-110 rounded-lg p-2 ">
                         <Search/>
                     </a>
                     <a href="/"
-                    className="hover:text-black hover:scale-110 rounded-lg p-2 hidden md:block">
+                    className="hover:text-black hover:scale-110 rounded-lg p-2 ">
                         <ShoppingBag/>
                     </a>
                 </div>
             </div>
         </div>
       </nav>
+
+      <Sidebar navbar={navbar} toggleDropDown={toggleDropDown} />
+
     </>
   )
 }
