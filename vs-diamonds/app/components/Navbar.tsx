@@ -4,6 +4,7 @@ import {useState} from 'react';
 import { Search, ShoppingBag, Menu} from 'lucide-react';
 import Logo from "./Logo";
 import Sidebar from './Sidebar';
+import { Link } from 'react-scroll';
 
 
 const Navbar = () => {
@@ -43,9 +44,9 @@ const Navbar = () => {
                         <a href = "/" className="font-sans text-gray-500 hover:text-black hover:underline rounded-lg p-2">
                             Home
                         </a>
-                        <a href = "/" className="font-sans text-gray-500 hover:text-black hover:underline rounded-lg p-2">
+                        <Link to="catalog" smooth={true} duration={500} className="font-sans text-gray-500 hover:text-black hover:underline rounded-lg p-2">
                             Catalog
-                        </a>
+                        </Link>
                         <a href = "/" className="font-sans text-gray-500 hover:text-black hover:underline rounded-lg p-2">
                             Contact
                         </a>
